@@ -3,7 +3,9 @@ import { Routes, RouterModule } from '@angular/router';
 import {WelcomeComponent} from './welcome/component/welcome/welcome.component';
 
 const routes: Routes = [
-  {path: 'index', component: WelcomeComponent}
+  {path: 'index', component: WelcomeComponent},
+  {path: '', redirectTo: 'index', pathMatch: 'full'},
+  {path: '**', redirectTo: 'index'}
 ];
 
 @NgModule({
