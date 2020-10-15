@@ -22,4 +22,12 @@ export class OrderComponent implements OnInit {
   drinkNameById(drinkId: number): string {
     return this.drinks.find((drink) => drink.uid === drinkId.toString()).name;
   }
+
+  deleteOrder(): void {
+    this.orderService.deleteOrder();
+  }
+
+  sendOrder(): void {
+    this.orderService.sendOrder();
+  }
 }

@@ -24,5 +24,9 @@
       <strong>Total</strong>
       <p>{{orderService.getTotal()}}</p>
     </div>
+    <div class="buttons">
+      <button class="button is-danger" (click)="deleteOrder()">Supprimer</button>
+      <button class="button is-primary" (click)="sendOrder()">Envoyer</button>
+    </div>
   </div>
 </section>

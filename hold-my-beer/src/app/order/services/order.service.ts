@@ -22,8 +22,9 @@ export class OrderService {
   }
 
   sendOrder(): void {
-    console.log('Commande envoyée : ');
+    console.log('Command sent : ');
     console.log(this.orders);
+    this.deleteOrder();
   }
 
   isOrderEmpty(): boolean {
@@ -32,5 +33,9 @@ export class OrderService {
 
   getTotal(): number {
     return this.orders.reduce((a, b) => a + (b.quantity || 0), 0);
+  }
+
+  deleteOrder(): void {
+    this.orders = new Array<Order>();
   }
 }
