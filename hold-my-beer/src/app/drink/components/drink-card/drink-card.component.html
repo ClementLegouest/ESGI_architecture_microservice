@@ -4,13 +4,20 @@
   </div>
   <div style="width: 50%" class="card-content">
     <div class="media-content">
-      <p class="title is-4">Drink name</p>
-      <p class="subtitle is-6">isAlcoholic ?</p>
-      <p>Bla bla bla Lorem ipsum bla bla bla drink description.</p>
+      <p class="title is-4">{{name}}</p>
+      <p>{{description}}</p>
+      <sub *ngIf="isAlcoholic" style="color: #ff0000">l'abus d'alcool est dangereux pour la santé à consommer avec modération</sub>
     </div>
   </div>
   <div class="content" style="width: 25%; padding: 1.5rem">
-
-    
+    <input type="number"
+           id="quantity"
+           name="quantity"
+           min="0"
+           [(ngModel)]="quantity">
+    <br>
+    <button (click)="addADrink()">Ajouter</button>
+    <br>
+    <p name="danger-text-zero-drinks" style="color: red; display: none;">Quantity must be over 0</p>
   </div>
 </div>

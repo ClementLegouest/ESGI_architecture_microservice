@@ -9,6 +9,7 @@ import { FooterComponent } from './footer/components/footer/footer.component';
 import { BookingComponent } from './booking/components/booking/booking.component';
 import { OrderComponent } from './order/components/order/order.component';
 import { DrinkCardComponent } from './drink/components/drink-card/drink-card.component';
+import {FormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -20,10 +21,11 @@ import { DrinkCardComponent } from './drink/components/drink-card/drink-card.com
     OrderComponent,
     DrinkCardComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        FormsModule
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })

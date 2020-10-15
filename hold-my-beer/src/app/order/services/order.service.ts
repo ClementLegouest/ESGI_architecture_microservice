@@ -10,13 +10,10 @@ export class OrderService {
 
   constructor() { }
 
-  addNewOrder(drinkId: number, quantity: number, date: Date): void {
-    this.orders.push(
-      new Order(
-        drinkId,
-        quantity,
-        date
-      )
-    );
+  addADrink(drinkId: number, quantity: number): void {
+    if (quantity > 0) {
+      this.orders.push(new Order(drinkId, quantity, new Date()));
+    }
+    console.log(this.orders);
   }
 }

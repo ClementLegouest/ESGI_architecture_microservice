@@ -5,6 +5,11 @@
     </h1>
   </div>
   <div>
-    <app-drink-card *ngFor="let drink of drinks"></app-drink-card>
+    <app-drink-card *ngFor="let drink of drinks; index as i"
+                    [drinkId]="drink.uid"
+                    [name]="drink.name"
+                    [isAlcoholic]="drink.isAlcoholic"
+                    [description]="drink.description">
+    </app-drink-card>
   </div>
 </section>

@@ -1,7 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
 body::after {
   content: "";
-  background: url(assets/img/nikola-jovanovic-QGPmWrclELg-unsplash.jpg);
+  background-image: url(assets/img/nikola-jovanovic-QGPmWrclELg-unsplash.jpg);
+  background-attachment: fixed;
   opacity: 0.1;
   top: 0;
   left: 0;
