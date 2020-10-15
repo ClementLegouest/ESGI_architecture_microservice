@@ -25,4 +25,12 @@ export class OrderService {
     console.log('Commande envoyée : ');
     console.log(this.orders);
   }
+
+  isOrderEmpty(): boolean {
+    return this.orders.length === 0;
+  }
+
+  getTotal(): number {
+    return this.orders.reduce((a, b) => a + (b.quantity || 0), 0);
+  }
 }

@@ -13,10 +13,16 @@
                     [description]="drink.description">
     </app-drink-card>
   </div>
-  <div>
-    <h3>Récap commande</h3>
-    <p *ngFor="let order of orderService.getOrders()">
-      {{drinkNameById(order.drinkId)}} : {{order.quantity}}
-    </p>
+  <div *ngIf="!orderService.isOrderEmpty()" style="padding: 20px">
+    <div id="command-summary" style="margin: 10px 0px">
+      <strong>Récap commande</strong>
+      <p *ngFor="let order of orderService.getOrders()">
+        {{drinkNameById(order.drinkId)}} : {{order.quantity}}
+      </p>
+    </div>
+    <div id="command-total" style="margin: 10px 0px">
+      <strong>Total</strong>
+      <p>{{orderService.getTotal()}}</p>
+    </div>
   </div>
 </section>
