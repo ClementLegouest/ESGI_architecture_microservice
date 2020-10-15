@@ -13,4 +13,10 @@
                     [description]="drink.description">
     </app-drink-card>
   </div>
+  <div>
+    <h3>Récap commande</h3>
+    <p *ngFor="let order of orderService.getOrders()">
+      {{drinkNameById(order.drinkId)}} : {{order.quantity}}
+    </p>
+  </div>
 </section>
