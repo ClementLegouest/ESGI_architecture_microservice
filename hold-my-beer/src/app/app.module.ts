@@ -7,6 +7,8 @@ import { WelcomeComponent } from './welcome/component/welcome/welcome.component'
 import { HeaderComponent } from './header/components/header/header.component';
 import { FooterComponent } from './footer/components/footer/footer.component';
 import { BookingComponent } from './booking/components/booking/booking.component';
+import { OrderComponent } from './order/components/order/order.component';
+import { DrinkCardComponent } from './drink/components/drink-card/drink-card.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +16,9 @@ import { BookingComponent } from './booking/components/booking/booking.component
     WelcomeComponent,
     HeaderComponent,
     FooterComponent,
-    BookingComponent
+    BookingComponent,
+    OrderComponent,
+    DrinkCardComponent
   ],
   imports: [
     BrowserModule,

@@ -44,3 +44,7 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
+
+# Docker build scripts
+docker_build.sh
+docker_run.sh
