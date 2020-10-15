@@ -6,6 +6,7 @@
   </div>
   <div>
     <app-drink-card *ngFor="let drink of drinks; index as i"
+                    [index]="i"
                     [drinkId]="drink.uid"
                     [name]="drink.name"
                     [isAlcoholic]="drink.isAlcoholic"

@@ -16,5 +16,4 @@ export class OrderComponent implements OnInit {
   ngOnInit(): void {
     this.drinks = this.drinkService.getDrinksFromLocal();
   }
-
 }

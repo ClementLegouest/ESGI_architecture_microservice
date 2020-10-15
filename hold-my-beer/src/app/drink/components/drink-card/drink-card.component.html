@@ -11,13 +11,17 @@
   </div>
   <div class="content" style="width: 25%; padding: 1.5rem">
     <input type="number"
-           id="quantity"
+           [id]="quantityInputId"
            name="quantity"
            min="0"
            [(ngModel)]="quantity">
     <br>
     <button (click)="addADrink()">Ajouter</button>
     <br>
-    <p name="danger-text-zero-drinks" style="color: red; display: none;">Quantity must be over 0</p>
+    <p [id]="dangerTextId"
+       name="danger-text-zero-drinks"
+       style="color: red; display: none;"
+       [innerText]="dangerTextValue">
+    </p>
   </div>
 </div>
