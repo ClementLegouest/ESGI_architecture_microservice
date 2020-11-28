@@ -3,15 +3,29 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { WelcomeComponent } from './welcome/component/welcome/welcome.component';
+import { HeaderComponent } from './header/components/header/header.component';
+import { FooterComponent } from './footer/components/footer/footer.component';
+import { BookingComponent } from './booking/components/booking/booking.component';
+import { OrderComponent } from './order/components/order/order.component';
+import { DrinkCardComponent } from './drink/components/drink-card/drink-card.component';
+import {FormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    WelcomeComponent,
+    HeaderComponent,
+    FooterComponent,
+    BookingComponent,
+    OrderComponent,
+    DrinkCardComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        FormsModule
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })
