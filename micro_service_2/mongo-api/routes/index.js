@@ -1,18 +1,15 @@
-UserController=require('../controlleur/user-controller');
+DrinkController = require('../controlleur/drink-controller');
 
-module.exports = (server) =>{
-    server.get('/users',UserController.getUsers);
-    server.get('/user/:id',UserController.getUser);
-    server.post('/user',UserController.createUser);
-    server.delete('/user',UserController.deleteUser);
+module.exports = (server) => {
+  server.get('/drinks', DrinkController.getDrinks);
+  server.get('/drink/:id', DrinkController.getDrink);
+  server.get('/theCoctailsApi', DrinkController.getDrinkFromCocktailApi);
 
-    server.post('/autoInsertUsers/:number',UserController.autoInsertUsers);
-    
-    server.get('/front.html', function(request, response) {
-        response.sendfile('./front.html');
-      });
+  server.get('/front.html', function (request, response) {
+    response.sendfile('./front.html');
+  });
 
-    //server.delete('/movie',MovieController.delete);
-    //server.delete('/user',UserController.deleteUser); 
-    
+  //server.delete('/movie',MovieController.delete);
+  //server.delete('/user',UserController.deleteUser); 
+
 }
