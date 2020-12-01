@@ -1,18 +1,16 @@
-UserController=require('../controlleur/user-controller');
+TableController = require('../controlleur/tables-controller');
+ReservationController = require('../controlleur/reservations-controller');
 
-module.exports = (server) =>{
-    server.get('/users',UserController.getUsers);
-    server.get('/user/:id',UserController.getUser);
-    server.post('/user',UserController.createUser);
-    server.delete('/user',UserController.deleteUser);
+module.exports = (server) => {
 
-    server.post('/autoInsertUsers/:number',UserController.autoInsertUsers);
-    
-    server.get('/front.html', function(request, response) {
-        response.sendfile('./front.html');
-      });
+  server.get('/tables', TableController.getTables);
+  server.get('/table/:id', TableController.getTable);
+  server.post('/table', TableController.createTable);
+  server.delete('/table', TableController.deleteTable);
 
-    //server.delete('/movie',MovieController.delete);
-    //server.delete('/user',UserController.deleteUser); 
-    
+  server.get('/reservations', ReservationController.getReservations);
+  server.get('/reservation/:id', ReservationController.getReservation);
+  server.post('/reservation', ReservationController.createReservation);
+  server.delete('/reservation', ReservationController.deleteReservation);
+
 }

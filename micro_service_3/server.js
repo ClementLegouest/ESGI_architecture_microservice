@@ -13,7 +13,7 @@ server.listen(3050, () => {
     console.log("Ecoute sur le port 3050");
 
     //connexion à la base de donnée
-    mongoose.connect('mongodb://127.0.0.1:27017/api_1', {
+    mongoose.connect('mongodb://127.0.0.1:27017/api_3', {
         useMongoClient: true,
     });
 

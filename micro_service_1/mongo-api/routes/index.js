@@ -8,11 +8,4 @@ module.exports = (server) =>{
 
     server.post('/autoInsertUsers/:number',UserController.autoInsertUsers);
     
-    server.get('/front.html', function(request, response) {
-        response.sendfile('./front.html');
-      });
-
-    //server.delete('/movie',MovieController.delete);
-    //server.delete('/user',UserController.deleteUser); 
-    
 }
