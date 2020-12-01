@@ -16,7 +16,14 @@ export class OrderComponent implements OnInit {
               public orderService: OrderService) { }
 
   ngOnInit(): void {
-    this.drinks = this.drinkService.getDrinksFromLocal();
+    // this.drinks = this.drinkService.getDrinksFromLocal();
+    this.drinkService.getDrinksFromServer()
+      .subscribe((drinks) => {
+        drinks.forEach((drink: Drink) => {
+          console.log(drink);
+          this.drinks.push(drink);
+        });
+      });
   }
 
   drinkNameById(drinkId: number): string {

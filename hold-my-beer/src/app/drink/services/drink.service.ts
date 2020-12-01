@@ -1,6 +1,9 @@
-import {Injectable, OnInit} from '@angular/core';
-import {Drink} from '../models/drink';
-import {Observable, Subscriber} from 'rxjs';
+import { HttpClient } from '@angular/common/http';
+import { Injectable, OnInit } from '@angular/core';
+import { Drink } from '../models/drink';
+import { RawDrink } from '../interfaces/raw-drink';
+import { Observable, Subscriber } from 'rxjs';
+import { map } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -31,10 +34,30 @@ export class DrinkService {
       false)
   ];
 
-  constructor() { }
+  constructor(private http: HttpClient) {}
 
   // STUB to delete
   getDrinksFromLocal(): Drink[] {
     return this.drinks;
+  }
+
+  getDrinksFromServer(): Observable<Drink[]> {
+    return this.http.get<RawDrink[]>('http://microservice_drinks:3002/drinks')
+      .pipe(
+        map((rawDrinks: RawDrink[]): Drink[] => {
+          const drinks: Drink[] = new Array<Drink>();
+          rawDrinks.forEach((rawDrink) => {
+            drinks.push(new Drink(
+              rawDrink.uid,
+              rawDrink.name,
+              rawDrink.description,
+              rawDrink.isAlcoholic == 'yes'? true : false
+            ));
+          });
+          console.log('Les boissons');
+          console.log(drinks);
+          return drinks;
+        })
+      );
   }
 }

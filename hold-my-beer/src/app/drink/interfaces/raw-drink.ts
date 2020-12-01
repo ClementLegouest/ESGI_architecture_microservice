@@ -1,5 +1,6 @@
 export interface RawDrink {
   uid: string;
   name: string;
-  isAlcoholic: boolean;
+  isAlcoholic: string;
+  description: string;
 }

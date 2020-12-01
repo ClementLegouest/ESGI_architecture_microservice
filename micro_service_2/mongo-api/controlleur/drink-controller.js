@@ -21,17 +21,19 @@ module.exports = {
         })
     },
 
-    //créer un utilisateur
+    //créer une boisson
     createDrink(req, res) {
         const name = req.body.name;
-        const prix = req.body.prix
-        const drink = new Drink({ name, prix });
+        const price = req.body.price;
+        const description = req.body.description;
+        const isAlcoholic = req.body.isAlcoholic;
+        const drink = new Drink({ name, price, isAlcoholic, description });
         drink.save().then(() => {
             res.send({ drink });
         });
     },
 
-    //supprimer un utilisateur
+    //supprimer une boisson
     deleteDrink(req, res) {
         const id = req.params.id;
         Drink.findByIdAndRemove({ _id: id }).then((drink) => {

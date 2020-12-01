@@ -3,7 +3,9 @@ const Schema = mongoose.Schema;
 
 const DrinkSchema = new Schema({
     name: String,
-    price: Number
+    price: Number,
+    isAlcoholic: String,
+    description: String
 });
 
 const Drink = mongoose.model('drink',DrinkSchema);

@@ -9,7 +9,8 @@ import { FooterComponent } from './footer/components/footer/footer.component';
 import { BookingComponent } from './booking/components/booking/booking.component';
 import { OrderComponent } from './order/components/order/order.component';
 import { DrinkCardComponent } from './drink/components/drink-card/drink-card.component';
-import {FormsModule} from '@angular/forms';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -21,11 +22,12 @@ import {FormsModule} from '@angular/forms';
     OrderComponent,
     DrinkCardComponent
   ],
-    imports: [
-        BrowserModule,
-        AppRoutingModule,
-        FormsModule
-    ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })
