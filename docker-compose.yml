@@ -1,6 +1,60 @@
-version: 3.1
+version: "3"
 
 services:
 
-        front:
-                image: docker run -it --rm -p 80:80 hold-my-beer
+  microservice1:
+    build: ./micro_service_1
+    ports:
+      - "3000:3000"
+    links:
+      - database1
+    volumes:
+      - ./micro_service_1:/usr/src/app
+    depends_on:
+      - database1
+      
+  database1:
+    image: mongo
+  
+  microservice2:
+    build: ./micro_service_2
+    ports:
+      - "3001:3000"
+    links:
+      - database2
+    volumes:
+      - ./micro_service_2:/usr/src/app
+    depends_on:
+      - database2
+  
+  database2:
+    image: mongo
+  
+  microservice3:
+    build: ./micro_service_3
+    ports:
+      - "3002:3000"
+    links:
+      - database3
+    volumes:
+      - ./micro_service_3:/usr/src/app
+    depends_on:
+      - database3
+  
+  database3:
+    image: mongo
+  
+  web:
+    build: ./hold-my-beer
+    ports:
+      - "4200:4200"
+    links:
+      - microservice1
+      - microservice2
+      - microservice3
+    volumes:
+      - ./hold-my-beer:/usr/src/app
+    depends_on:
+      - microservice1
+      - microservice2
+      - microservice3

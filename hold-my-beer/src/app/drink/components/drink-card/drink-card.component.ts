@@ -33,7 +33,6 @@ export class DrinkCardComponent implements OnInit {
     } else {
       document.getElementById(this.dangerTextId).style.display = 'none';
       this.orderService.addADrink(this.drinkId, this.quantity);
-      document.getElementById(this.quantityInputId).value = 0;
     }
   }
 }

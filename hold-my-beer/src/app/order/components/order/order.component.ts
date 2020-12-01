@@ -12,8 +12,8 @@ export class OrderComponent implements OnInit {
 
   drinks: Drink[] = new Array<Drink>();
 
-  constructor(private drinkService: DrinkService,
-              private orderService: OrderService) { }
+  constructor(public drinkService: DrinkService,
+              public orderService: OrderService) { }
 
   ngOnInit(): void {
     this.drinks = this.drinkService.getDrinksFromLocal();
