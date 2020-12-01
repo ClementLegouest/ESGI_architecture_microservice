@@ -13,7 +13,7 @@ server.listen(3000, () => {
     console.log("Ecoute sur le port 3000");
 
     //connexion à la base de donnée
-    mongoose.connect('mongodb://database1:27017/api_1', {
+    mongoose.connect('mongodb://database_users:27017/api_1', {
         useMongoClient: true,
     });
 

@@ -3,7 +3,7 @@ const Schema = mongoose.Schema;
 
 const DrinkSchema = new Schema({
     name: String,
-    prix: Number
+    price: Number
 });
 
 const Drink = mongoose.model('drink',DrinkSchema);
